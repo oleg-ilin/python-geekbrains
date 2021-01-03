@@ -17,13 +17,19 @@ class Car:
 class TownCar(Car):
     def show_speed(self):
         if self.speed > 60:
+            print(f'текущая скорость {self.color} {self.name} {self.speed}')
             print(f'{self.color} {self.name} превысил(а) скорость')
+        else:
+            print(f'текущая скорость {self.color} {self.name} {self.speed}')
 class SportCar(Car):
     pass
 class WorkCar(Car):
     def show_speed(self):
         if self.speed > 40:
+            print(f'текущая скорость {self.color} {self.name} {self.speed}')
             print(f'{self.color} {self.name} превысил(а) скорость')
+        else:
+            print(f'текущая скорость {self.color} {self.name} {self.speed}')
 class PoliceCar(Car):
     pass
 car_1 = Car(100, 'белая', 'Тойота')
