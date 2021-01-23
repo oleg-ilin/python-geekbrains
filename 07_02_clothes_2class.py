@@ -3,6 +3,10 @@
 from abc import ABC, abstractmethod
 
 class ParentClass(ABC):
+    def sum(self):
+        sum = textile_01 + textile_02
+        print(f'Общий расход ткани: {sum}')
+
     @abstractmethod
     def __init__(self, value):
         pass
@@ -32,10 +36,6 @@ class Suit(ParentClass):
         textile_02 = 0
         textile_02 = round((self.value * 2 + 0.2))
         return (f'Расход ткани на костюм: {textile_02}')
-
-    def sum(self):
-        sum = textile_01 + textile_02
-        print(f'Общий расход ткани: {sum}')
 
 
 c = Coat(50)
