@@ -21,5 +21,5 @@ class Matrix:
 m_1 = Matrix([[31, 22, 1], [37, 43, 1], [51, 86, 1]])
 m_2 = Matrix([[1, 1, 1], [1, 1, 1], [1, 1, 1]])
 print(m_1)
-print(m_1 + m_2)
-
+m_3 = m_1 + m_2
+print(m_3)
