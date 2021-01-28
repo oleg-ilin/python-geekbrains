@@ -3,9 +3,6 @@
 from abc import ABC, abstractmethod
 
 class ParentClass(ABC):
-    def sum(self):
-        sum = textile_01 + textile_02
-        print(f'Общий расход ткани: {sum}')
 
     @abstractmethod
     def __init__(self, value):
@@ -18,30 +15,39 @@ class ParentClass(ABC):
 
 class Coat(ParentClass):
     def __init__(self, value):
+        super().__init__(value)
         self.value = value
 
     def calc(self):
-        global textile_01
-        textile_01 = 0
         textile_01 = round((self.value / 6.5 + 0.5), 2)
         return (f'Расход ткани на пальто: {textile_01}')
 
 
 class Suit(ParentClass):
     def __init__(self, value):
+        super().__init__(value)
         self.value = value
 
     def calc(self):
-        global textile_02
-        textile_02 = 0
-        textile_02 = round((self.value * 2 + 0.2))
+        textile_02 = round((self.value * 2 + 0.2), 2)
         return (f'Расход ткани на костюм: {textile_02}')
 
 
-c = Coat(50)
-s = Suit(2)
-sum = Suit(1)
+class Clothes:
+    def sum(self, c, s):
+        self.c = c
+        self.s = s
+        sum = round((self.c / 6.5 + 0.5), 2) + round((self.s * 2 + 0.2), 2)
+        return (f'Общий расход ткани: {sum}')
+
+v = 50
+h = 2
+c = Coat(v)
+s = Suit(h)
+sum = Clothes()
 print(c.calc())
 print(s.calc())
-sum.sum()
+print(sum.sum(v, h))
+
+
 
